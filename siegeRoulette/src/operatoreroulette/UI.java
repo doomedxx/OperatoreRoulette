@@ -363,7 +363,7 @@ public class UI extends java.awt.Frame implements Serializable {
         operatorAmount.setForeground(new java.awt.Color(255, 255, 255));
         operatorAmount.setText("2");
         add(operatorAmount);
-        operatorAmount.setBounds(180, 200, 40, 30);
+        operatorAmount.setBounds(170, 200, 40, 30);
 
         labelOperatorsLeft.setFont(new java.awt.Font("Bebas Neue Regular", 0, 28)); // NOI18N
         labelOperatorsLeft.setForeground(new java.awt.Color(255, 255, 255));
@@ -386,11 +386,11 @@ public class UI extends java.awt.Frame implements Serializable {
 
         shieldLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/icons/sword.png"))); // NOI18N
         panelDice.add(shieldLogo);
-        shieldLogo.setBounds(240, 120, 50, 70);
+        shieldLogo.setBounds(230, 120, 50, 70);
 
         shieldLogo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/icons/shield.png"))); // NOI18N
         panelDice.add(shieldLogo1);
-        shieldLogo1.setBounds(160, 120, 50, 70);
+        shieldLogo1.setBounds(170, 120, 50, 70);
 
         defenderLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/noOperator.png"))); // NOI18N
         panelDice.add(defenderLogo);
@@ -642,6 +642,7 @@ public class UI extends java.awt.Frame implements Serializable {
         }
     });
     
+ //// THE BIG MIGHTLY DICE BUTTON! /////////////////////////////////////////////
     private void attackerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_attackerButtonActionPerformed
                 if (instantRoll == false) {
                     drawerCount = 34;
@@ -663,7 +664,6 @@ public class UI extends java.awt.Frame implements Serializable {
         attackerButton.setEnabled(false);
         attackerButton.setText("Rolling...");
         attackerButton.setBackground(new java.awt.Color(51, 51, 51));
-        int cycleAmount = 1;
         challengeLabel.setText("...");
         progressValue = 0;
         totalRolls++;
@@ -673,7 +673,7 @@ public class UI extends java.awt.Frame implements Serializable {
         defenderLabel.setVisible(false);
         timer.start();
     }//GEN-LAST:event_attackerButtonActionPerformed
-
+///////////////////////////////////////////////////////////////////////////////
     
     private void optionsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionsButtonActionPerformed
         playSoundEffect(list.buttonClick);
