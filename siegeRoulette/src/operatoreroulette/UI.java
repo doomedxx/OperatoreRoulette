@@ -498,96 +498,128 @@ public class UI extends java.awt.Frame implements Serializable {
             rollProgress.setValue(progressValue);
             delay = delay + 6;
             timer.setDelay(delay);
-            // ATTACKERS
-                if ("sledge".equals(list.attacker)) {
+                if (null != list.attacker) // ATTACKERS
+            switch (list.attacker) {
+                case "sledge":
                     attackerLabel.setText("Sledge!");
                     attackerLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/attackers/sledge.jpg")));
-                } else if ("thatcher".equals(list.attacker)) {
+                    break;
+                case "thatcher":
                     attackerLabel.setText("Thatcher!");
                     attackerLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/attackers/thatcher.jpg")));
-                }  else if ("ash".equals(list.attacker)) {
+                    break;
+                case "ash":
                     attackerLabel.setText("Ash!");
                     attackerLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/attackers/ash.jpg")));
-                }  else if ("thermite".equals(list.attacker)) {
+                    break;
+                case "thermite":
                     attackerLabel.setText("Thermite!");
                     attackerLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/attackers/thermite.jpg")));
-                }  else if ("twitch".equals(list.attacker)) {
+                    break;
+                case "twitch":
                     attackerLabel.setText("Twitch!");
                     attackerLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/attackers/twitch.jpg")));
-                }  else if ("montagne".equals(list.attacker)) {
+                    break;
+                case "montagne":
                     attackerLabel.setText("Montagne!");
                     attackerLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/attackers/montagne.jpg")));
-                }  else if ("glaz".equals(list.attacker)) {
+                    break;
+                case "glaz":
                     attackerLabel.setText("Glaz!");
                     attackerLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/attackers/glaz.jpg")));
-                }  else if ("fuse".equals(list.attacker)) {
+                    break;
+                case "fuse":
                     attackerLabel.setText("Fuse!");
                     attackerLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/attackers/fuse.jpg")));
-                }  else if ("blitz".equals(list.attacker)) {
+                    break;
+                case "blitz":
                     attackerLabel.setText("Blitz!");
                     attackerLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/attackers/blitz.jpg")));
-                }  else if ("iq".equals(list.attacker)) {
+                    break;
+                case "iq":
                     attackerLabel.setText("IQ!");
                     attackerLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/attackers/iq.jpg")));
-                }  else if ("blackbeard".equals(list.attacker)) {
+                    break;
+                case "blackbeard":
                     attackerLabel.setText("Blackbeard!");
                     attackerLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/attackers/blackbeard.jpg")));
-                }  else if ("buck".equals(list.attacker)) {
+                    break;
+                case "buck":
                     attackerLabel.setText("Buck!");
                     attackerLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/attackers/buck.jpg")));
-                }  else if ("hibana".equals(list.attacker)) {
+                    break;
+                case "hibana":
                     attackerLabel.setText("Hibana!");
                     attackerLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/attackers/hibana.jpg")));
-                }
-                   else if ("recruit".equals(list.attacker)) {
+                    break;
+                case "recruit":
                     attackerLabel.setText("recruit");
                     attackerLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/defenders/recruit.jpg")));
-                }
-                            // DEFENDERS
-                if ("smoke".equals(list.defender)) {
+                    break;
+                default:
+                    break;
+            }
+                if (null != list.defender) // DEFENDERS
+            switch (list.defender) {
+                case "smoke":
                     defenderLabel.setText("Smoke!");
                     defenderLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/defenders/smoke.jpg")));
-                } else if ("mute".equals(list.defender)) {
+                    break;
+                case "mute":
                     defenderLabel.setText("Mute!");
                     defenderLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/defenders/mute.jpg")));
-                } else if ("castle".equals(list.defender)) {
+                    break;
+                case "castle":
                     defenderLabel.setText("Castle!");
                     defenderLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/defenders/castle.jpg")));
-                }  else if ("pulse".equals(list.defender)) {
+                    break;
+                case "pulse":
                     defenderLabel.setText("Pulse!");
                     defenderLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/defenders/pulse.jpg")));
-                }  else if ("doc".equals(list.defender)) {
+                    break;
+                case "doc":
                     defenderLabel.setText("Doc!");
                     defenderLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/defenders/doc.jpg")));
-                }   else if ("rook".equals(list.defender)) {
+                    break;
+                case "rook":
                     defenderLabel.setText("Rook!");
                     defenderLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/defenders/rook.jpg")));
-                }   else if ("kapkan".equals(list.defender)) {
+                    break;
+                case "kapkan":
                     defenderLabel.setText("Kapkan!");
                     defenderLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/defenders/kapkan.jpg")));
-                }   else if ("tachanka".equals(list.defender)) {
+                    break;
+                case "tachanka":
                     defenderLabel.setText("Lord!");
                     defenderLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/defenders/tachanka.jpg")));
-                }   else if ("jager".equals(list.defender)) {
+                    break;
+                case "jager":
                     defenderLabel.setText("Jäger!");
                     defenderLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/defenders/jager.jpg")));
-                }   else if ("bandit".equals(list.defender)) {
+                    break;
+                case "bandit":
                     defenderLabel.setText("Bandit!");
                     defenderLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/defenders/bandit.jpg")));
-                }   else if ("valkyrie".equals(list.defender)) {
+                    break;
+                case "valkyrie":
                     defenderLabel.setText("Valkyrie!");
                     defenderLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/defenders/valkyrie.jpg")));
-                }   else if ("frost".equals(list.defender)) {
+                    break;
+                case "frost":
                     defenderLabel.setText("Frost!");
                     defenderLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/defenders/frost.jpg")));
-                }   else if ("echo".equals(list.defender)) {
+                    break;
+                case "echo":
                     defenderLabel.setText("Echo!");
                     defenderLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/defenders/echo.jpg")));
-                }
-                   else if ("recruit".equals(list.defender)) {
+                    break;
+                case "recruit":
                     defenderLabel.setText("recruit");
                     defenderLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/defenders/recruit.jpg")));
-                }
+                    break;
+                default:
+                    break;
+            }
                     if (drawerCount == 35) {
                         progressValue = 0;
                         attackerButton.setText("Roll the dice!");
