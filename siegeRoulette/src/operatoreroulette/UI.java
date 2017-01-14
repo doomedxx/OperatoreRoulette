@@ -52,9 +52,7 @@ public class UI extends java.awt.Frame implements Serializable {
         blitzToggle = new javax.swing.JToggleButton();
         montagneToggle = new javax.swing.JToggleButton();
         shrinkMenu = new javax.swing.JButton();
-        soundIndicatorLabel = new javax.swing.JLabel();
         backgroundRemovalOption = new javax.swing.JButton();
-        toggleSoundOption = new javax.swing.JButton();
         recruitsToggle = new javax.swing.JToggleButton();
         instantRollMode = new javax.swing.JToggleButton();
         uniqueOperatorMOde = new javax.swing.JToggleButton();
@@ -63,6 +61,7 @@ public class UI extends java.awt.Frame implements Serializable {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        DisableSound = new javax.swing.JToggleButton();
         optionsButton = new javax.swing.JButton();
         appTitle = new javax.swing.JLabel();
         titleShadow = new javax.swing.JLabel();
@@ -178,12 +177,6 @@ public class UI extends java.awt.Frame implements Serializable {
         jPanel2.add(shrinkMenu);
         shrinkMenu.setBounds(210, 510, 70, 41);
 
-        soundIndicatorLabel.setFont(new java.awt.Font("Bebas Neue Regular", 0, 18)); // NOI18N
-        soundIndicatorLabel.setForeground(new java.awt.Color(255, 255, 255));
-        soundIndicatorLabel.setText("Sounds on!");
-        jPanel2.add(soundIndicatorLabel);
-        soundIndicatorLabel.setBounds(10, 210, 70, 40);
-
         backgroundRemovalOption.setBackground(new java.awt.Color(102, 102, 102));
         backgroundRemovalOption.setFont(new java.awt.Font("Bebas Neue Regular", 0, 24)); // NOI18N
         backgroundRemovalOption.setForeground(new java.awt.Color(255, 255, 255));
@@ -196,24 +189,6 @@ public class UI extends java.awt.Frame implements Serializable {
         });
         jPanel2.add(backgroundRemovalOption);
         backgroundRemovalOption.setBounds(90, 260, 210, 41);
-
-        toggleSoundOption.setBackground(new java.awt.Color(102, 102, 102));
-        toggleSoundOption.setFont(new java.awt.Font("Bebas Neue Regular", 0, 24)); // NOI18N
-        toggleSoundOption.setForeground(new java.awt.Color(255, 255, 255));
-        toggleSoundOption.setText("Toggle Sound Effects");
-        toggleSoundOption.setFocusable(false);
-        toggleSoundOption.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                toggleSoundOptionMouseEntered(evt);
-            }
-        });
-        toggleSoundOption.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                toggleSoundOptionActionPerformed(evt);
-            }
-        });
-        jPanel2.add(toggleSoundOption);
-        toggleSoundOption.setBounds(90, 210, 210, 41);
 
         recruitsToggle.setBackground(new java.awt.Color(102, 102, 102));
         recruitsToggle.setFont(new java.awt.Font("Bebas Neue Regular", 0, 18)); // NOI18N
@@ -252,7 +227,7 @@ public class UI extends java.awt.Frame implements Serializable {
         instantRollMode.setBounds(90, 310, 210, 40);
 
         uniqueOperatorMOde.setBackground(new java.awt.Color(102, 102, 102));
-        uniqueOperatorMOde.setFont(new java.awt.Font("Bebas Neue Regular", 0, 24)); // NOI18N
+        uniqueOperatorMOde.setFont(new java.awt.Font("Bebas Neue Regular", 0, 22)); // NOI18N
         uniqueOperatorMOde.setForeground(new java.awt.Color(255, 255, 255));
         uniqueOperatorMOde.setText("Unique Operator Mode");
         uniqueOperatorMOde.setFocusable(false);
@@ -303,6 +278,25 @@ public class UI extends java.awt.Frame implements Serializable {
         jLabel9.setText("(Resets after all operators are");
         jPanel2.add(jLabel9);
         jLabel9.setBounds(90, 460, 220, 19);
+
+        DisableSound.setBackground(new java.awt.Color(102, 102, 102));
+        DisableSound.setFont(new java.awt.Font("Bebas Neue Regular", 0, 22)); // NOI18N
+        DisableSound.setForeground(new java.awt.Color(255, 255, 255));
+        DisableSound.setText("Disable sound effects");
+        DisableSound.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        DisableSound.setFocusable(false);
+        DisableSound.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                DisableSoundMouseEntered(evt);
+            }
+        });
+        DisableSound.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DisableSoundActionPerformed(evt);
+            }
+        });
+        jPanel2.add(DisableSound);
+        DisableSound.setBounds(90, 210, 210, 40);
 
         add(jPanel2);
         jPanel2.setBounds(530, 0, 400, 570);
@@ -689,16 +683,6 @@ public class UI extends java.awt.Frame implements Serializable {
         }
     }//GEN-LAST:event_backgroundRemovalOptionActionPerformed
 
-    private void toggleSoundOptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleSoundOptionActionPerformed
-                noSoundEffects = !noSoundEffects;
-        playSoundEffect("/sounds/toggle.wav");
-        if (noSoundEffects == true) {
-            soundIndicatorLabel.setText("Sounds off");
-        } else {
-            soundIndicatorLabel.setText("Sounds on");
-        }
-    }//GEN-LAST:event_toggleSoundOptionActionPerformed
-
     private void attackerButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_attackerButtonMouseEntered
         playSoundEffect(list.hover);
     }//GEN-LAST:event_attackerButtonMouseEntered
@@ -706,10 +690,6 @@ public class UI extends java.awt.Frame implements Serializable {
     private void optionsButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_optionsButtonMouseEntered
         playSoundEffect(list.hover);
     }//GEN-LAST:event_optionsButtonMouseEntered
-
-    private void toggleSoundOptionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_toggleSoundOptionMouseEntered
-        playSoundEffect(list.hover);
-    }//GEN-LAST:event_toggleSoundOptionMouseEntered
 
     private void ChangelogMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ChangelogMouseEntered
         playSoundEffect(list.hover);
@@ -783,6 +763,15 @@ public class UI extends java.awt.Frame implements Serializable {
                 labelOperatorsLeft.setVisible(false);
             }
     }//GEN-LAST:event_uniqueOperatorMOdeActionPerformed
+
+    private void DisableSoundMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DisableSoundMouseEntered
+        playSoundEffect(list.hover);
+    }//GEN-LAST:event_DisableSoundMouseEntered
+
+    private void DisableSoundActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisableSoundActionPerformed
+        playSoundEffect(list.buttonClick);                
+        noSoundEffects = !noSoundEffects;
+    }//GEN-LAST:event_DisableSoundActionPerformed
     
 // PLAY AUDIO
     
@@ -833,6 +822,7 @@ public class UI extends java.awt.Frame implements Serializable {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Changelog;
+    private javax.swing.JToggleButton DisableSound;
     private javax.swing.JLabel appSettings;
     private javax.swing.JLabel appTitle;
     private javax.swing.JButton attackerButton;
@@ -869,9 +859,7 @@ public class UI extends java.awt.Frame implements Serializable {
     private javax.swing.JLabel shieldLogo;
     private javax.swing.JLabel shieldLogo1;
     private javax.swing.JButton shrinkMenu;
-    private javax.swing.JLabel soundIndicatorLabel;
     private javax.swing.JLabel titleShadow;
-    private javax.swing.JButton toggleSoundOption;
     private javax.swing.JToggleButton uniqueOperatorMOde;
     // End of variables declaration//GEN-END:variables
     private operatorList list;
